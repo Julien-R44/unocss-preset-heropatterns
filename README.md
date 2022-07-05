@@ -1,6 +1,6 @@
 # unocss-preset-heropatterns
 
-🏁 [UnoCSS](https://github.com/unocss/unocss) preset that integrates [Hero Pattern](https://heropatterns.com/)
+🏁 [UnoCSS](https://github.com/unocss/unocss) preset that integrates [Hero Patterns](https://heropatterns.com/)
 
 ## Installation
 ```
