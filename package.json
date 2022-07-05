@@ -11,6 +11,9 @@
   "engines": {
     "node": ">=16"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/Julien-R44/unocss-preset-heropatterns#readme",
   "bugs": {
     "url": "https://github.com/Julien-R44/unocss-preset-heropatterns/issues"
