@@ -1,5 +1,5 @@
-import type { Preset } from 'unocss'
 import patterns from './patterns'
+import type { Preset } from 'unocss'
 
 export function presetHeroPatterns(): Preset {
   return {
