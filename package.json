@@ -1,7 +1,7 @@
 {
   "name": "@julr/unocss-preset-heropatterns",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.0.1",
+  "packageManager": "pnpm@7.9.5",
   "description": "🏁 UnoCSS preset that integrates Hero Patterns.",
   "keywords": [
     "unocss",
@@ -61,21 +61,21 @@
     "unocss": ">= 0.31.13 < 1"
   },
   "devDependencies": {
-    "@antfu/ni": "^0.16.2",
+    "@antfu/ni": "^0.18.0",
     "@japa/assert": "^1.3.4",
-    "@japa/runner": "^2.0.8",
+    "@japa/runner": "^2.0.9",
     "@japa/spec-reporter": "^1.1.12",
-    "@julr/eslint-config": "^0.3.0",
-    "@types/node": "^17.0.34",
-    "bumpp": "^7.1.1",
-    "eslint": "^8.15.0",
-    "pnpm": "^7.1.1",
-    "prettier": "^2.6.2",
+    "@julr/eslint-config": "^0.3.2",
+    "@types/node": "^18.7.14",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.23.0",
+    "pnpm": "^7.9.5",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4",
-    "unbuild": "^0.7.4",
-    "unocss": "^0.43.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2",
+    "unbuild": "^0.8.10",
+    "unocss": "^0.45.14"
   },
   "eslintConfig": {
     "extends": "@julr",
@@ -98,7 +98,8 @@
     "peerDependencyRules": {
       "ignoreMissing": [
         "openapi-types",
-        "vite"
+        "vite",
+        "@babel/core"
       ]
     }
   }
