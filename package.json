@@ -1,6 +1,6 @@
 {
   "name": "@julr/unocss-preset-heropatterns",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@7.9.5",
   "description": "🏁 UnoCSS preset that integrates Hero Patterns.",
   "keywords": [
