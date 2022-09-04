@@ -1,4 +1,8 @@
-# unocss-preset-heropatterns
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/8337858/188330902-8da839c9-162b-4028-a70e-3b0295f3bcf3.png">
+</p>
+
+# unocss-preset-hero-patterns
 
 🏁 [UnoCSS](https://github.com/unocss/unocss) preset that integrates [Hero Patterns](https://heropatterns.com/)
 
