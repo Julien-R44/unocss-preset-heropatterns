@@ -1,5 +1,5 @@
 import patterns from './patterns'
-import { colorResolver } from "@unocss/preset-mini/utils"
+import { parseColor } from "@unocss/preset-mini/utils"
 import type { Preset } from 'unocss'
 
 const availablePatterns = Object.keys(patterns)
@@ -13,34 +13,30 @@ export function presetHeroPatterns(): Preset {
     rules: [
       [
         bgHeroRegex,
-        (match, context) => {
-          const solveColor = (body: string) => colorResolver('prop', 'v')(['', body], context)
-          const [, name, color] = match
-          const bgImage = patterns[name || '']
-          const cssColor = solveColor(color || '') as { 'prop': string, '--un-v-opacity': string }
-          if (!bgImage || !cssColor) {
+        ([, name, color], { theme }) => {
+          const pattern = patterns[name || '']
+          const parsed = parseColor(color || '', theme)
+          if (!(pattern && parsed)) {
             return
           }
+          const rgbComponents = parsed.cssColor?.components.join(',') ?? '0,0,0'
+          const alpha = parsed.alpha?.toString() ?? "1"
+          const bgImage = pattern.replace("FILLCOLOR", `rgb(${rgbComponents})`).replace("FILLOPACITY", alpha)
           return {
-            'background-image': bgImage.replace(
-              "FILLCOLOR", 
-              cssColor['prop'].replace("var(--un-v-opacity)", "1")
-            ).replace(
-              "FILLOPACITY",
-              cssColor["--un-v-opacity"]
-            )
+            'background-image': bgImage
           }
         }
       ],
       [
         bgMaskHeroRegex,
         ([, name]) => {
-          if (!name || !patterns[name]) {
+          const pattern = patterns[name || '']
+          if (!pattern) {
             return
           }
 
           return {
-            '-webkit-mask-image': patterns[name],
+            '-webkit-mask-image': pattern,
           }
         },
       ],
