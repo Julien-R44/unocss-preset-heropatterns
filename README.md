@@ -24,12 +24,14 @@ export default defineConfig({
 })
 ```
 
-The only rule that is added via this preset is `bg-hero-{patternName}`.
+TODO: Explain also `bg-hero-{patternName}-{color}`
 
-We use [mask-image](https://developer.mozilla.org/fr/docs/Web/CSS/mask-image) to display the patterns, so to change the color of the pattern, its opacity, or the background color, you can use the classes you are used to, for example :
+The only rule that is added via this preset is `bg-mask-hero-{patternName}`.
+
+We use [mask-image](https://developer.mozilla.org/en/docs/Web/CSS/mask-image) to display the patterns, so to change the color of the pattern, its opacity, or the background color, you can use the classes you are used to, for example :
 
 ```html
-<div class="bg-hero-rain bg-red-500 opacity-70"></div>
+<div class="bg-mask-hero-rain bg-red-500 opacity-70"></div>
 ```
 
 ## List of patterns
