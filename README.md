@@ -24,9 +24,21 @@ export default defineConfig({
 })
 ```
 
-TODO: Explain also `bg-hero-{patternName}-{color}`
+This preset add 2 rules
 
-The only rule that is added via this preset is `bg-mask-hero-{patternName}`.
+### `bg-hero-${patternName}-${color}`
+
+It works in a similar way to the tailwind/windicss plugin for heropatterns, it provides `patternName` with the color `color` as a [background-image](https://developer.mozilla.org/en/docs/Web/CSS/background-image); `color` can be any valid unoCSS color pattern, so it is possible to directly control also the opacity with it; some examples:
+
+```html
+<div class="bg-hero-rain-red-500"></div> <!-- this will render the rain pattern with color red-500 -->
+<div class="bg-hero-rain-red-500/70"></div> <!-- this will render the rain pattern with color red-500 and 70% opacity -->
+<div class="bg-hero-rain-[#fff]"></div> <!-- this will render the rain pattern with color #fff -->
+<div class="bg-hero-rain-white-500 bg-dark-500"></div> <!-- it is also possible to combine it with a background color -->
+```
+
+
+### `bg-mask-hero-{patternName}`
 
 We use [mask-image](https://developer.mozilla.org/en/docs/Web/CSS/mask-image) to display the patterns, so to change the color of the pattern, its opacity, or the background color, you can use the classes you are used to, for example :
 
@@ -126,3 +138,4 @@ We use [mask-image](https://developer.mozilla.org/en/docs/Web/CSS/mask-image) to
 ## License
 
 [MIT](./LICENSE.md) License © 2022 [Julien Ripouteau](https://github.com/Julien-R44)
+
