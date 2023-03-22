@@ -1,40 +1,34 @@
 {
   "name": "@julr/unocss-preset-heropatterns",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "packageManager": "pnpm@7.9.5",
   "description": "🏁 UnoCSS preset that integrates Hero Patterns.",
+  "author": "Julien Ripouteau <julien@ripouteau.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/Julien-R44",
+  "homepage": "https://github.com/Julien-R44/unocss-preset-heropatterns#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julien-R44/unocss-preset-heropatterns.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Julien-R44/unocss-preset-heropatterns/issues"
+  },
   "keywords": [
     "unocss",
     "unocss-preset",
     "hero patterns"
   ],
-  "engines": {
-    "node": ">=16"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "homepage": "https://github.com/Julien-R44/unocss-preset-heropatterns#readme",
-  "bugs": {
-    "url": "https://github.com/Julien-R44/unocss-preset-heropatterns/issues"
-  },
-  "license": "MIT",
-  "author": "Julien Ripouteau <julien@ripouteau.com>",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Julien-R44/unocss-preset-heropatterns.git"
-  },
-  "funding": "https://github.com/sponsors/Julien-R44",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "typesVersions": {
     "*": {
       "*": [
@@ -42,6 +36,12 @@
         "./dist/index.d.ts"
       ]
     }
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "files": [
     "dist"
@@ -80,6 +80,15 @@
     "typescript": "^4.9.4",
     "unbuild": "^1.0.2"
   },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "openapi-types",
+        "vite",
+        "@babel/core"
+      ]
+    }
+  },
   "eslintConfig": {
     "extends": "@julr",
     "rules": {
@@ -96,14 +105,5 @@
     "bracketSpacing": true,
     "arrowParens": "always",
     "printWidth": 100
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "openapi-types",
-        "vite",
-        "@babel/core"
-      ]
-    }
   }
 }
