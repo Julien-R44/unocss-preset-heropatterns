@@ -6,7 +6,7 @@ import type { Preset } from 'unocss'
 const availablePatterns = Object.keys(patterns)
 const availablePatternsGroup = `(${availablePatterns.join('|')})`
 const bgHeroRegex = new RegExp(`^bg-hero-${availablePatternsGroup}-(.*)$`)
-const bgMaskHeroRegex = new RegExp(`^mask-bg-hero-${availablePatternsGroup}$`)
+const bgMaskHeroRegex = new RegExp(`^bg-mask-hero-${availablePatternsGroup}$`)
 
 export function presetHeroPatterns(): Preset {
   return {
