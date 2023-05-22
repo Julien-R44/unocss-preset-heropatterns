@@ -28,6 +28,7 @@ export function presetHeroPatterns(): Preset {
                 parsed.cssColor?.components.join(','),
                 parsed.alpha?.toString()
               ),
+              'background-repeat': 'repeat',
             }
           }
         },
