@@ -43,7 +43,7 @@ It works in a similar way to the tailwind/windicss plugin for heropatterns, it p
 We use [mask-image](https://developer.mozilla.org/en/docs/Web/CSS/mask-image) to display the patterns, so to change the color of the pattern, its opacity, or the background color, you can use the classes you are used to, for example :
 
 ```html
-<div class="mask-bg-hero-rain bg-red-500 opacity-70"></div>
+<div class="bg-mask-hero-rain bg-red-500 opacity-70"></div>
 ```
 
 ## List of patterns
