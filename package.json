@@ -49,6 +49,7 @@
   "scripts": {
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
+    "dev:playground": "pnpm -C ./playground dev",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
     "prepublishOnly": "nr build",
@@ -61,8 +62,8 @@
     "unocss": ">= 0.31.13 < 1"
   },
   "dependencies": {
-    "@unocss/preset-mini": "^0.47.6",
-    "unocss": "^0.47.6"
+    "@unocss/preset-mini": "^0.52.0",
+    "unocss": "^0.52.0"
   },
   "devDependencies": {
     "@antfu/ni": "^0.21.3",
