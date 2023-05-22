@@ -40,6 +40,7 @@ export function presetHeroPatterns(): Preset {
           if (pattern) {
             return {
               '-webkit-mask-image': getBgImage(pattern),
+              'background-repeat': 'repeat',
             }
           }
         },
