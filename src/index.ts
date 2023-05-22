@@ -4,9 +4,13 @@ import patterns from './patterns'
 import type { Preset } from 'unocss'
 
 const availablePatterns = Object.keys(patterns)
-const availablePatternsGroup = `(${availablePatterns.join('|')})`
+const availablePatternsGroup = `(${availablePatterns.sort().reverse().join('|')})`
 const bgHeroRegex = new RegExp(`^bg-hero-${availablePatternsGroup}-(.*)$`)
 const bgMaskHeroRegex = new RegExp(`^mask-bg-hero-${availablePatternsGroup}$`)
+
+function getBgImage(pattern: string, rgb = '0,0,0', alpha = '1') {
+  return pattern.replace('FILLCOLOR', `rgb(${rgb})`).replace('FILLOPACITY', alpha)
+}
 
 export function presetHeroPatterns(): Preset {
   return {
@@ -18,13 +22,12 @@ export function presetHeroPatterns(): Preset {
           const pattern = patterns[name || '']
           const parsed = parseColor(color || '', theme)
           if (pattern && parsed) {
-            const rgbComponents = parsed.cssColor?.components.join(',') ?? '0,0,0'
-            const alpha = parsed.alpha?.toString() ?? '1'
-            const bgImage = pattern
-              .replace('FILLCOLOR', `rgb(${rgbComponents})`)
-              .replace('FILLOPACITY', alpha)
             return {
-              'background-image': bgImage,
+              'background-image': getBgImage(
+                pattern,
+                parsed.cssColor?.components.join(','),
+                parsed.alpha?.toString()
+              ),
             }
           }
         },
@@ -35,7 +38,7 @@ export function presetHeroPatterns(): Preset {
           const pattern = patterns[name || '']
           if (pattern) {
             return {
-              '-webkit-mask-image': pattern,
+              '-webkit-mask-image': getBgImage(pattern),
             }
           }
         },
