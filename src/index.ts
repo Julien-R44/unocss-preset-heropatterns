@@ -6,7 +6,7 @@ import type { Preset } from 'unocss'
 const availablePatterns = Object.keys(patterns)
 const availablePatternsGroup = `(${availablePatterns.sort().reverse().join('|')})`
 const bgHeroRegex = new RegExp(`^bg-hero-${availablePatternsGroup}-(.*)$`)
-const bgMaskHeroRegex = new RegExp(`^mask-bg-hero-${availablePatternsGroup}$`)
+const bgMaskHeroRegex = new RegExp(`^(mask-bg-hero-|bg-mask-hero-)${availablePatternsGroup}$`)
 
 function getBgImage(pattern: string, rgb = '0,0,0', alpha = '1') {
   return pattern.replace('FILLCOLOR', `rgb(${rgb})`).replace('FILLOPACITY', alpha)
@@ -34,7 +34,7 @@ export function presetHeroPatterns(): Preset {
       ],
       [
         bgMaskHeroRegex,
-        ([, name]) => {
+        ([, , name]) => {
           const pattern = patterns[name || '']
           if (pattern) {
             return {
