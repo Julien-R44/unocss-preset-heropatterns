@@ -59,11 +59,11 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "unocss": ">= 0.31.13 < 1"
+    "unocss": ">= 0.31.13"
   },
   "dependencies": {
-    "@unocss/preset-mini": "^0.52.0",
-    "unocss": "^0.52.0"
+    "@unocss/preset-mini": "^65.4.3",
+    "unocss": "^65.4.3"
   },
   "devDependencies": {
     "@antfu/ni": "^0.21.3",
