@@ -1,7 +1,8 @@
 {
   "name": "@julr/unocss-preset-heropatterns",
   "version": "1.0.2",
-  "packageManager": "pnpm@8.15.9",
+  "type": "module",
+  "packageManager": "pnpm@10.3.0",
   "description": "🏁 UnoCSS preset that integrates Hero Patterns.",
   "author": "Julien Ripouteau <julien@ripouteau.com>",
   "license": "MIT",
@@ -47,12 +48,12 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rimraf dist && unbuild",
+    "build": "unbuild",
     "dev": "unbuild --stub",
     "dev:playground": "pnpm -C ./playground dev",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
-    "prepublishOnly": "nr build",
+    "prepublishOnly": "pnpm build",
     "release": "bumpp --commit --push --tag && pnpm publish",
     "start": "node --loader=ts-node/esm src/index.ts",
     "test": "pnpm lint && pnpm typecheck",
@@ -67,42 +68,20 @@
     "unocss": "^65.4.3"
   },
   "devDependencies": {
-    "@antfu/ni": "^0.21.12",
-    "@julr/eslint-config": "^0.3.2",
-    "@types/node": "^20.17.18",
-    "bumpp": "^9.11.1",
-    "eslint": "^8.57.1",
-    "pnpm": "^8.15.9",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.10",
+    "@julr/tooling-configs": "^4.0.0",
+    "@types/node": "^22.13.2",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.20.1",
+    "pnpm": "^10.3.0",
+    "prettier": "^3.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
-    "unbuild": "^1.2.1"
+    "unbuild": "^3.3.1"
   },
+  "prettier": "@julr/tooling-configs/prettier",
   "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "openapi-types",
-        "vite",
-        "@babel/core"
-      ]
-    }
-  },
-  "eslintConfig": {
-    "extends": "@julr",
-    "rules": {
-      "n/no-unsupported-features/es-syntax": "off",
-      "n/no-missing-import": "off"
-    }
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true,
-    "useTabs": false,
-    "quoteProps": "consistent",
-    "bracketSpacing": true,
-    "arrowParens": "always",
-    "printWidth": 100
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
