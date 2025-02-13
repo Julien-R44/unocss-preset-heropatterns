@@ -1,7 +1,7 @@
-import { parseColor } from '@unocss/preset-mini/utils'
+import { parseColor } from '@unocss/preset-mini'
 import patterns from './patterns'
 
-import type { Preset } from 'unocss'
+import type { Preset,  } from 'unocss'
 
 const availablePatterns = Object.keys(patterns)
 const availablePatternsGroup = `(${availablePatterns.sort().reverse().join('|')})`
