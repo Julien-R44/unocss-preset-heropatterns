@@ -4,30 +4,33 @@ on:
   push:
     branches:
       - main
-      - master
 
   pull_request:
     branches:
       - main
-      - master
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.1
+      - uses: actions/checkout@v4
 
       - name: Set node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: 16.x
-          cache: pnpm
+          node-version: lts/*
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Install
-        run: pnpm install
+        run: pnpm i
 
       - name: Lint
         run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Build
+        run: pnpm build

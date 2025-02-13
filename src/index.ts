@@ -1,7 +1,7 @@
+import type { Preset } from 'unocss'
 import { parseColor } from '@unocss/preset-mini'
-import patterns from './patterns'
 
-import type { Preset,  } from 'unocss'
+import patterns from './patterns'
 
 const availablePatterns = Object.keys(patterns)
 const availablePatternsGroup = `(${availablePatterns.sort().reverse().join('|')})`
@@ -26,7 +26,7 @@ export function presetHeroPatterns(): Preset {
               'background-image': getBgImage(
                 pattern,
                 parsed.cssColor?.components.join(','),
-                parsed.alpha?.toString()
+                parsed.alpha?.toString(),
               ),
             }
           }

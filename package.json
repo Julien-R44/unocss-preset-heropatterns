@@ -1,7 +1,7 @@
 {
   "name": "@julr/unocss-preset-heropatterns",
-  "version": "1.0.2",
   "type": "module",
+  "version": "1.0.2",
   "packageManager": "pnpm@10.3.0",
   "description": "🏁 UnoCSS preset that integrates Hero Patterns.",
   "author": "Julien Ripouteau <julien@ripouteau.com>",
@@ -34,7 +34,7 @@
     "build": "unbuild",
     "dev": "unbuild --stub",
     "dev:playground": "pnpm -C ./playground dev",
-    "lint": "eslint . --ext=.ts",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "prepublishOnly": "pnpm build",
     "release": "bumpp --commit --push --tag && pnpm publish",
