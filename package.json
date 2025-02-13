@@ -20,29 +20,12 @@
     "unocss-preset",
     "hero patterns"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
+  "exports": "./dist/index.mjs",
   "files": [
     "dist"
   ],
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "publishConfig": {
     "access": "public"
