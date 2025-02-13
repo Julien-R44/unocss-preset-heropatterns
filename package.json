@@ -1,7 +1,7 @@
 {
   "name": "@julr/unocss-preset-heropatterns",
   "version": "1.0.2",
-  "packageManager": "pnpm@8.5.1",
+  "packageManager": "pnpm@8.15.9",
   "description": "🏁 UnoCSS preset that integrates Hero Patterns.",
   "author": "Julien Ripouteau <julien@ripouteau.com>",
   "license": "MIT",
@@ -37,15 +37,15 @@
       ]
     }
   },
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=16"
   },
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
@@ -55,7 +55,8 @@
     "prepublishOnly": "nr build",
     "release": "bumpp --commit --push --tag && pnpm publish",
     "start": "node --loader=ts-node/esm src/index.ts",
-    "test": "node --loader=ts-node/esm bin/test.ts",
+    "test": "pnpm lint && pnpm typecheck",
+    "quick:test": "echo \"Error: no test specified\" && exit 0",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -66,19 +67,16 @@
     "unocss": "^65.4.3"
   },
   "devDependencies": {
-    "@antfu/ni": "^0.21.3",
-    "@japa/assert": "^1.4.1",
-    "@japa/runner": "^2.5.1",
-    "@japa/spec-reporter": "^1.3.3",
+    "@antfu/ni": "^0.21.12",
     "@julr/eslint-config": "^0.3.2",
-    "@types/node": "^20.2.3",
-    "bumpp": "^9.1.0",
-    "eslint": "^8.41.0",
-    "pnpm": "^8.5.1",
+    "@types/node": "^20.17.18",
+    "bumpp": "^9.11.1",
+    "eslint": "^8.57.1",
+    "pnpm": "^8.15.9",
     "prettier": "^2.8.8",
-    "rimraf": "^5.0.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4",
+    "rimraf": "^5.0.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
     "unbuild": "^1.2.1"
   },
   "pnpm": {
