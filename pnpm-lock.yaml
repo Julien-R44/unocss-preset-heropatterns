@@ -11,9 +11,6 @@ importers:
       '@unocss/preset-mini':
         specifier: ^65.4.3
         version: 65.4.3
-      unocss:
-        specifier: ^65.4.3
-        version: 65.4.3(postcss@8.5.2)(rollup@4.34.6)(vite@6.1.0(@types/node@22.13.2)(jiti@2.4.2)(tsx@4.19.2))(vue@3.5.13(typescript@5.7.3))
     devDependencies:
       '@julr/tooling-configs':
         specifier: ^4.0.0
@@ -42,6 +39,9 @@ importers:
       unbuild:
         specifier: ^3.3.1
         version: 3.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
+      unocss:
+        specifier: ^65.4.3
+        version: 65.4.3(postcss@8.5.2)(rollup@4.34.6)(vite@6.1.0(@types/node@22.13.2)(jiti@2.4.2)(tsx@4.19.2))(vue@3.5.13(typescript@5.7.3))
 
   playground:
     devDependencies:
